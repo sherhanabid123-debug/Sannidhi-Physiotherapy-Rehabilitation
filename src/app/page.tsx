@@ -37,8 +37,8 @@ export default function Home() {
   }, []);
 
   const fadeInUp = {
-    hidden: { opacity: 0, y: 40 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] as any } }
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } }
   };
 
   const staggerContainer = {
@@ -46,7 +46,7 @@ export default function Home() {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.15
+        staggerChildren: 0.05
       }
     }
   };
@@ -328,14 +328,17 @@ export default function Home() {
             <p className="section-subtitle" style={{ fontSize: '1.2rem' }}>Meet our highly qualified and experienced professionals dedicated to your recovery.</p>
           </motion.div>
 
-          <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '3rem' }}>
+          <motion.div 
+            style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '3rem' }}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={staggerContainer}
+          >
             <motion.div 
               className="card"
               style={{ width: '400px', border: '1px solid var(--color-border)', borderRadius: 'var(--border-radius-lg)', textAlign: 'center', boxShadow: 'var(--shadow-md)', backgroundColor: 'white' }}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
+              variants={fadeInUp}
               whileHover={{ y: -10, boxShadow: 'var(--shadow-lg)', borderColor: 'var(--color-primary)' }}
             >
               <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', height: '100%' }}>
@@ -351,10 +354,7 @@ export default function Home() {
             <motion.div 
               className="card"
               style={{ width: '400px', border: '1px solid var(--color-border)', borderRadius: 'var(--border-radius-lg)', textAlign: 'center', boxShadow: 'var(--shadow-md)', backgroundColor: 'white' }}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.2 }}
+              variants={fadeInUp}
               whileHover={{ y: -10, boxShadow: 'var(--shadow-lg)', borderColor: 'var(--color-primary)' }}
             >
               <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', height: '100%' }}>
@@ -366,7 +366,7 @@ export default function Home() {
                 <p style={{ color: 'var(--color-text-muted)', fontSize: '1rem' }}>Specialized in advanced neurological therapies and patient care.</p>
               </div>
             </motion.div>
-          </div>
+          </motion.div>
         </div>
       </section>
 
@@ -521,15 +521,19 @@ export default function Home() {
             <p className="section-subtitle">Real experiences from those who chose Sannidhi Rehab.</p>
           </motion.div>
 
-          <div className="testimonials-slider" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))', gap: '3rem' }}>
+          <motion.div 
+            className="testimonials-slider" 
+            style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))', gap: '3rem' }}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={staggerContainer}
+          >
             {testimonials.map((testimonial, index) => (
               <motion.div 
                 key={index} 
                 className="card testimonial-card"
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.2 }}
+                variants={fadeInUp}
                 whileHover={{ y: -5 }}
                 style={{ padding: '3rem' }}
               >
@@ -546,7 +550,7 @@ export default function Home() {
                 </div>
               </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </section>
 

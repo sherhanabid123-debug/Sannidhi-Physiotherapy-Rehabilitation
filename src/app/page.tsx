@@ -51,6 +51,13 @@ export default function Home() {
     }
   };
 
+  const subtlePopup = {
+    initial: { opacity: 0, y: 15, scale: 0.98 },
+    whileInView: { opacity: 1, y: 0, scale: 1 },
+    viewport: { once: true, margin: "-50px" },
+    transition: { duration: 0.6, ease: "easeOut" as any }
+  };
+
   const services = [
     {
       title: "Neuro Rehabilitation",
@@ -266,6 +273,7 @@ export default function Home() {
           <div className="about-grid" style={{ gap: '6rem' }}>
             <motion.div 
               className="about-image"
+              {...subtlePopup}
             >
               <div style={{ position: 'relative', borderRadius: 'var(--border-radius-lg)', overflow: 'hidden' }}>
                 <Image 
@@ -280,6 +288,7 @@ export default function Home() {
             
             <motion.div 
               className="about-content"
+              {...subtlePopup}
             >
               <span style={{ color: 'var(--color-primary)', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '2px', fontSize: '0.9rem', display: 'block', marginBottom: '1rem' }}>Our Story</span>
               <h2 style={{ fontSize: '3rem', marginBottom: '2rem' }}>About Sannidhi Physiotherapy & Rehabilitation</h2>
@@ -313,7 +322,7 @@ export default function Home() {
             <p className="section-subtitle" style={{ fontSize: '1.2rem' }}>Meet our highly qualified and experienced professionals dedicated to your recovery.</p>
           </div>
 
-          <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '3rem' }}>
+          <motion.div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '3rem' }} {...subtlePopup}>
             <motion.div 
               className="card"
               style={{ width: '400px', border: '1px solid var(--color-border)', borderRadius: 'var(--border-radius-lg)', textAlign: 'center', boxShadow: 'var(--shadow-md)', backgroundColor: 'white' }}
@@ -343,7 +352,7 @@ export default function Home() {
                 <p style={{ color: 'var(--color-text-muted)', fontSize: '1rem' }}>Specialized in advanced neurological therapies and patient care.</p>
               </div>
             </motion.div>
-          </div>
+          </motion.div>
         </div>
       </section>
 
@@ -355,7 +364,7 @@ export default function Home() {
             <p className="section-subtitle" style={{ fontSize: '1.2rem' }}>Comprehensive programs tailored to your specific needs, delivered right at your doorstep.</p>
           </div>
 
-          <div className="services-grid">
+          <motion.div className="services-grid" {...subtlePopup}>
             {services.map((service, index) => (
               <motion.div 
                 key={index} 
@@ -373,7 +382,7 @@ export default function Home() {
                 </ul>
               </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </section>
 
@@ -381,7 +390,7 @@ export default function Home() {
       <section id="why-us" className="section" style={{ backgroundColor: 'var(--color-sage-light)', paddingBottom: '8rem' }}>
         <div className="container">
           <div className="about-grid" style={{ alignItems: 'start' }}>
-            <div>
+            <motion.div {...subtlePopup}>
               <h2 style={{ fontSize: '3rem', marginBottom: '3rem' }}>Why Choose Sannidhi Rehab?</h2>
               <div className="features-grid" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))' }}>
                 {whyChooseUs.map((feature, index) => (
@@ -398,7 +407,7 @@ export default function Home() {
                   </motion.div>
                 ))}
               </div>
-            </div>
+            </motion.div>
 
             <motion.div 
               className="card"
@@ -429,7 +438,7 @@ export default function Home() {
             <p className="section-subtitle">A simple, structured approach to starting your recovery journey.</p>
           </div>
 
-          <div className="steps-container" style={{ marginTop: '4rem' }}>
+          <motion.div className="steps-container" style={{ marginTop: '4rem' }} {...subtlePopup}>
             <div className="steps-line" style={{ background: 'linear-gradient(to right, transparent, var(--color-sage), transparent)' }}></div>
             {steps.map((step, index) => (
               <motion.div 
@@ -448,7 +457,7 @@ export default function Home() {
                 <p style={{ fontSize: '0.95rem', opacity: 0.8 }}>{step.desc}</p>
               </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </section>
 
@@ -460,7 +469,7 @@ export default function Home() {
             <p className="section-subtitle">Real experiences from those who chose Sannidhi Rehab.</p>
           </div>
 
-          <div className="testimonials-slider" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))', gap: '3rem' }}>
+          <motion.div className="testimonials-slider" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))', gap: '3rem' }} {...subtlePopup}>
             {testimonials.map((testimonial, index) => (
               <motion.div 
                 key={index} 
@@ -481,7 +490,7 @@ export default function Home() {
                 </div>
               </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </section>
 
@@ -491,6 +500,7 @@ export default function Home() {
           <motion.div 
             className="booking-section"
             style={{ boxShadow: 'var(--shadow-lg)' }}
+            {...subtlePopup}
           >
             <div className="booking-grid" style={{ gap: '6rem' }}>
               <div>

@@ -193,17 +193,17 @@ export default function Home() {
         <div className="container hero-container">
           <motion.div 
             className="hero-content"
-            initial="hidden"
+            
             animate="visible"
-            variants={staggerContainer}
+            
           >
-            <motion.h1 variants={fadeInUp} style={{ lineHeight: 1.1 }}>
+            <motion.h1  style={{ lineHeight: 1.1 }}>
               Expert Physiotherapy & <span style={{ display: 'block' }}>Rehabilitation </span> <span>At Your Doorstep</span>
             </motion.h1>
-            <motion.p variants={fadeInUp} style={{ fontSize: '1.3rem', opacity: 0.9 }}>
+            <motion.p  style={{ fontSize: '1.3rem', opacity: 0.9 }}>
               Compassionate multidisciplinary services designed to support recovery and restore independence — from the comfort of your home.
             </motion.p>
-            <motion.div className="hero-buttons" variants={fadeInUp}>
+            <motion.div className="hero-buttons" >
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                 <Link href="#booking" className="btn btn-primary">
                   Book a Home Visit <ArrowRight size={18} />
@@ -266,10 +266,6 @@ export default function Home() {
           <div className="about-grid" style={{ gap: '6rem' }}>
             <motion.div 
               className="about-image"
-              initial={{ opacity: 0, x: -50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 1 }}
             >
               <div style={{ position: 'relative', borderRadius: 'var(--border-radius-lg)', overflow: 'hidden' }}>
                 <Image 
@@ -284,21 +280,17 @@ export default function Home() {
             
             <motion.div 
               className="about-content"
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, margin: "-100px" }}
-              variants={staggerContainer}
             >
-              <motion.span variants={fadeInUp} style={{ color: 'var(--color-primary)', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '2px', fontSize: '0.9rem', display: 'block', marginBottom: '1rem' }}>Our Story</motion.span>
-              <motion.h2 variants={fadeInUp} style={{ fontSize: '3rem', marginBottom: '2rem' }}>About Sannidhi Physiotherapy & Rehabilitation</motion.h2>
-              <motion.p variants={fadeInUp} style={{ fontSize: '1.2rem', lineHeight: 1.8 }}>
+              <span style={{ color: 'var(--color-primary)', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '2px', fontSize: '0.9rem', display: 'block', marginBottom: '1rem' }}>Our Story</span>
+              <h2 style={{ fontSize: '3rem', marginBottom: '2rem' }}>About Sannidhi Physiotherapy & Rehabilitation</h2>
+              <p style={{ fontSize: '1.2rem', lineHeight: 1.8 }}>
                 Sannidhi Physiotherapy & Rehabilitation is a multidisciplinary home-based rehabilitation service committed to delivering compassionate, evidence-based, and patient-centered physiotherapy care across Bangalore.
-              </motion.p>
-              <motion.p variants={fadeInUp}>
+              </p>
+              <p >
                 We believe that rehabilitation is most effective when delivered in a familiar and comfortable environment. Our approach focuses on restoring functional independence and supporting long-term recovery through personalized rehabilitation programs.
-              </motion.p>
+              </p>
               
-              <motion.div className="flex gap-2 mt-4" variants={fadeInUp}>
+              <div className="flex gap-2 mt-4" >
                 <motion.div className="card" style={{ flex: 1, padding: '2rem', borderLeft: '4px solid var(--color-primary)' }} whileHover={{ scale: 1.02 }}>
                   <h4 style={{ marginBottom: '0.8rem', color: 'var(--color-primary)', fontSize: '1.2rem' }}>Our Vision</h4>
                   <p style={{ fontSize: '0.95rem' }}>To become a trusted multidisciplinary physiotherapy and rehabilitation service that delivers accessible, compassionate care by bringing quality rehabilitation closer to families.</p>
@@ -307,7 +299,7 @@ export default function Home() {
                   <h4 style={{ marginBottom: '0.8rem', color: 'var(--color-primary)', fontSize: '1.2rem' }}>Our Mission</h4>
                   <p style={{ fontSize: '0.95rem' }}>To provide patient-centered, goal-oriented rehabilitation services through home-based care while improving functional independence and quality of life.</p>
                 </motion.div>
-              </motion.div>
+              </div>
             </motion.div>
           </div>
         </div>
@@ -316,29 +308,15 @@ export default function Home() {
       {/* Specialists Section */}
       <section id="specialists" className="section" style={{ backgroundColor: 'var(--color-surface)' }}>
         <div className="container">
-          <motion.div 
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={fadeInUp}
-            className="text-center"
-            style={{ marginBottom: '4rem' }}
-          >
+          <div className="text-center" style={{ marginBottom: '4rem' }}>
             <h2 className="section-title" style={{ fontSize: '3.5rem' }}>Our Expert Specialists</h2>
             <p className="section-subtitle" style={{ fontSize: '1.2rem' }}>Meet our highly qualified and experienced professionals dedicated to your recovery.</p>
-          </motion.div>
+          </div>
 
-          <motion.div 
-            style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '3rem' }}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={staggerContainer}
-          >
+          <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '3rem' }}>
             <motion.div 
               className="card"
               style={{ width: '400px', border: '1px solid var(--color-border)', borderRadius: 'var(--border-radius-lg)', textAlign: 'center', boxShadow: 'var(--shadow-md)', backgroundColor: 'white' }}
-              variants={fadeInUp}
               whileHover={{ y: -10, boxShadow: 'var(--shadow-lg)', borderColor: 'var(--color-primary)' }}
             >
               <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', height: '100%' }}>
@@ -354,7 +332,6 @@ export default function Home() {
             <motion.div 
               className="card"
               style={{ width: '400px', border: '1px solid var(--color-border)', borderRadius: 'var(--border-radius-lg)', textAlign: 'center', boxShadow: 'var(--shadow-md)', backgroundColor: 'white' }}
-              variants={fadeInUp}
               whileHover={{ y: -10, boxShadow: 'var(--shadow-lg)', borderColor: 'var(--color-primary)' }}
             >
               <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', height: '100%' }}>
@@ -366,36 +343,23 @@ export default function Home() {
                 <p style={{ color: 'var(--color-text-muted)', fontSize: '1rem' }}>Specialized in advanced neurological therapies and patient care.</p>
               </div>
             </motion.div>
-          </motion.div>
+          </div>
         </div>
       </section>
 
       {/* Services Section */}
       <section id="services" className="section" style={{ backgroundColor: 'var(--color-sage-light)', borderRadius: 'var(--border-radius-lg) var(--border-radius-lg) 0 0' }}>
         <div className="container">
-          <motion.div 
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={fadeInUp}
-            className="text-center"
-          >
+          <div className="text-center">
             <h2 className="section-title" style={{ fontSize: '3.5rem' }}>Our Services</h2>
             <p className="section-subtitle" style={{ fontSize: '1.2rem' }}>Comprehensive programs tailored to your specific needs, delivered right at your doorstep.</p>
-          </motion.div>
+          </div>
 
-          <motion.div 
-            className="services-grid"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={staggerContainer}
-          >
+          <div className="services-grid">
             {services.map((service, index) => (
               <motion.div 
                 key={index} 
                 className="card service-card"
-                variants={fadeInUp}
                 whileHover={{ y: -10 }}
               >
                 <div className="service-icon" style={{ boxShadow: 'var(--shadow-sm)' }}>
@@ -409,7 +373,7 @@ export default function Home() {
                 </ul>
               </motion.div>
             ))}
-          </motion.div>
+          </div>
         </div>
       </section>
 
@@ -417,19 +381,13 @@ export default function Home() {
       <section id="why-us" className="section" style={{ backgroundColor: 'var(--color-sage-light)', paddingBottom: '8rem' }}>
         <div className="container">
           <div className="about-grid" style={{ alignItems: 'start' }}>
-            <motion.div 
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              variants={staggerContainer}
-            >
-              <motion.h2 variants={fadeInUp} style={{ fontSize: '3rem', marginBottom: '3rem' }}>Why Choose Sannidhi Rehab?</motion.h2>
+            <div>
+              <h2 style={{ fontSize: '3rem', marginBottom: '3rem' }}>Why Choose Sannidhi Rehab?</h2>
               <div className="features-grid" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))' }}>
                 {whyChooseUs.map((feature, index) => (
                   <motion.div 
                     key={index} 
                     className="feature-item" 
-                    variants={fadeInUp}
                     style={{ background: 'white', padding: '1.5rem', borderRadius: 'var(--border-radius-md)', boxShadow: 'var(--shadow-sm)' }}
                     whileHover={{ scale: 1.02, boxShadow: 'var(--shadow-md)' }}
                   >
@@ -440,15 +398,11 @@ export default function Home() {
                   </motion.div>
                 ))}
               </div>
-            </motion.div>
+            </div>
 
             <motion.div 
               className="card"
               style={{ backgroundColor: 'var(--color-primary)', color: 'white', padding: '3rem', position: 'sticky', top: '100px' }}
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
             >
               <h2 style={{ color: 'white', marginBottom: '2.5rem', fontSize: '2.2rem' }}>Our Core Values</h2>
               <ul className="service-list" style={{ gap: '2rem' }}>
@@ -470,16 +424,10 @@ export default function Home() {
       {/* How It Works */}
       <section className="section" style={{ marginTop: '-4rem', borderRadius: 'var(--border-radius-lg) var(--border-radius-lg) 0 0', backgroundColor: 'var(--color-background)', position: 'relative', zIndex: 5 }}>
         <div className="container">
-          <motion.div 
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={fadeInUp}
-            className="text-center"
-          >
+          <div className="text-center">
             <h2 className="section-title">How It Works</h2>
             <p className="section-subtitle">A simple, structured approach to starting your recovery journey.</p>
-          </motion.div>
+          </div>
 
           <div className="steps-container" style={{ marginTop: '4rem' }}>
             <div className="steps-line" style={{ background: 'linear-gradient(to right, transparent, var(--color-sage), transparent)' }}></div>
@@ -487,9 +435,6 @@ export default function Home() {
               <motion.div 
                 key={index} 
                 className="step-item"
-                initial={{ opacity: 0, scale: 0.8 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
                 transition={{ delay: index * 0.2, type: 'spring', stiffness: 100 }}
               >
                 <motion.div 
@@ -510,30 +455,16 @@ export default function Home() {
       {/* Testimonials */}
       <section className="section" style={{ backgroundColor: 'white' }}>
         <div className="container">
-          <motion.div 
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={fadeInUp}
-            className="text-center"
-          >
+          <div className="text-center">
             <h2 className="section-title">What Our Patients Say</h2>
             <p className="section-subtitle">Real experiences from those who chose Sannidhi Rehab.</p>
-          </motion.div>
+          </div>
 
-          <motion.div 
-            className="testimonials-slider" 
-            style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))', gap: '3rem' }}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={staggerContainer}
-          >
+          <div className="testimonials-slider" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))', gap: '3rem' }}>
             {testimonials.map((testimonial, index) => (
               <motion.div 
                 key={index} 
                 className="card testimonial-card"
-                variants={fadeInUp}
                 whileHover={{ y: -5 }}
                 style={{ padding: '3rem' }}
               >
@@ -550,7 +481,7 @@ export default function Home() {
                 </div>
               </motion.div>
             ))}
-          </motion.div>
+          </div>
         </div>
       </section>
 
@@ -559,47 +490,37 @@ export default function Home() {
         <div className="container">
           <motion.div 
             className="booking-section"
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 1 }}
             style={{ boxShadow: 'var(--shadow-lg)' }}
           >
             <div className="booking-grid" style={{ gap: '6rem' }}>
-              <motion.div 
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true }}
-                variants={staggerContainer}
-              >
-                <motion.h2 variants={fadeInUp} style={{ fontSize: '3.5rem', marginBottom: '1.5rem', lineHeight: 1 }}>Book a Home Visit</motion.h2>
-                <motion.p variants={fadeInUp} style={{ color: 'var(--color-sage)', marginBottom: '3rem', fontSize: '1.1rem' }}>Fill out the form below and our team will get in touch with you shortly to confirm your appointment.</motion.p>
+              <div>
+                <h2 style={{ fontSize: '3.5rem', marginBottom: '1.5rem', lineHeight: 1 }}>Book a Home Visit</h2>
+                <p style={{ color: 'var(--color-sage)', marginBottom: '3rem', fontSize: '1.1rem' }}>Fill out the form below and our team will get in touch with you shortly to confirm your appointment.</p>
                 
                 <form>
                   <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem' }}>
-                    <motion.div className="form-group" variants={fadeInUp}>
+                    <div className="form-group" >
                       <label className="form-label">Name</label>
                       <input type="text" className="form-control" placeholder="Your full name" required />
-                    </motion.div>
-                    <motion.div className="form-group" variants={fadeInUp}>
+                    </div>
+                    <div className="form-group" >
                       <label className="form-label">Phone Number</label>
                       <input type="tel" className="form-control" placeholder="Your contact number" required />
-                    </motion.div>
+                    </div>
                   </div>
-                  <motion.div className="form-group" variants={fadeInUp}>
+                  <div className="form-group" >
                     <label className="form-label">Area/Location</label>
                     <input type="text" className="form-control" placeholder="Your residential area in Bangalore" required />
-                  </motion.div>
-                  <motion.div className="form-group" variants={fadeInUp}>
+                  </div>
+                  <div className="form-group" >
                     <label className="form-label">Condition/Concern</label>
                     <input type="text" className="form-control" placeholder="Briefly describe your concern" required />
-                  </motion.div>
-                  <motion.div className="form-group" variants={fadeInUp}>
+                  </div>
+                  <div className="form-group" >
                     <label className="form-label">Preferred Time</label>
                     <input type="text" className="form-control" placeholder="E.g., Morning, Afternoon, Evening" required />
-                  </motion.div>
+                  </div>
                   <motion.button 
-                    variants={fadeInUp} 
                     type="submit" 
                     className="btn btn-primary" 
                     style={{ width: '100%', backgroundColor: 'var(--color-accent)', color: 'var(--color-primary-dark)', padding: '1.2rem', marginTop: '1rem', fontSize: '1.1rem' }}
@@ -609,14 +530,9 @@ export default function Home() {
                     Request Appointment
                   </motion.button>
                 </form>
-              </motion.div>
+              </div>
 
-              <motion.div 
-                initial={{ opacity: 0, x: 50 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                style={{ padding: '3rem', backgroundColor: 'rgba(255,255,255,0.05)', borderRadius: 'var(--border-radius-md)', height: '100%', display: 'flex', flexDirection: 'column' }}
-              >
+              <div style={{ padding: '3rem', backgroundColor: 'rgba(255,255,255,0.05)', borderRadius: 'var(--border-radius-md)', height: '100%', display: 'flex', flexDirection: 'column' }}>
                 <h3 style={{ color: 'white', marginBottom: '1.5rem', display: 'flex', alignItems: 'center', gap: '1rem', fontSize: '1.8rem' }}>
                   <MapPin color="var(--color-accent)" size={32} /> Areas We Serve
                 </h3>
@@ -657,7 +573,7 @@ export default function Home() {
                     </motion.a>
                   </div>
                 </div>
-              </motion.div>
+              </div>
             </div>
           </motion.div>
         </div>

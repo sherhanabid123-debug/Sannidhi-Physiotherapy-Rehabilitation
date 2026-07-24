@@ -1,7 +1,13 @@
 {
-  "name": "temp-sannidhi",
-  "version": "0.1.0",
+  "name": "sannidhi-physiotherapy-rehabilitation",
+  "description": "Website for Sannidhi Physiotherapy & Rehabilitation clinic.",
+  "version": "1.0.0",
   "private": true,
+  "author": "Sherhan Abid",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sherhanabid123-debug/Sannidhi-Physiotherapy-Rehabilitation"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
